@@ -1,51 +1,61 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class MyButton extends StatelessWidget {
-  final void Function()? onTap;
+  final String text;
   final double borderRadius;
   final double padding;
+  final VoidCallback onTap;
   final double horizontalMargin;
   final double verticalMargin;
   final Color color;
+  final Color textColor;
+  final Icon? icon;
+  final TextStyle? textStyle; // Add this
 
-  final String? text;
-  final Widget? child;
-
-  const MyButton({
-    super.key,
-    required this.onTap,
+  // Default textColor to black if not provided
+  MyButton({
+    required this.text,
     required this.borderRadius,
     required this.padding,
+    required this.onTap,
     required this.horizontalMargin,
     required this.verticalMargin,
     required this.color,
-    this.text,
-    this.child,
-  }) : assert(text != null || child != null, 'Either text or child must be provided');
+    required this.textColor,
+    this.icon,
+    this.textStyle,
+
+    //this.textColor = Colors.black, // Default to black
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(borderRadius),
-        ),
-        padding: EdgeInsets.all(padding),
         margin: EdgeInsets.symmetric(
           horizontal: horizontalMargin,
           vertical: verticalMargin,
         ),
+        padding: EdgeInsets.all(padding),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
         child: Center(
-          child: child ??
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (icon != null) ...[
+                icon!, // Display the icon only if it's not null
+                SizedBox(width: 10), // Space between the icon and text
+              ],
               Text(
-                text!,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+                text,
+                style: textStyle ?? TextStyle(color: textColor), // Use custom textStyle or default textColor
               ),
+            ],
+          ),
         ),
       ),
     );

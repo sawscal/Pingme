@@ -8,10 +8,9 @@ ThemeData lightMode = ThemeData(
     tertiary: Colors.white,
     inversePrimary: Colors.grey.shade300,
   ),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: const Color.fromARGB(255, 151, 49, 180), // your custom "button" color
-    ),
-  ),
+  // elevatedButtonTheme: ElevatedButtonThemeData(
+  //   style: ElevatedButton.styleFrom(
+  //     backgroundColor: const Color.fromARGB(255, 151, 49, 180), // your custom "button" color
+  //   ),
 );
-
+//);

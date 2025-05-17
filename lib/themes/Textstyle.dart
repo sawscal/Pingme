@@ -22,10 +22,6 @@ TextStyle greySubTextStyle() {
   );
 }
 
-TextStyle buttonTextStyle() {
-  return const TextStyle(fontSize: 18);
-}
-
 TextStyle bottomNoteStyle() {
   return const TextStyle(fontSize: 12, color: Colors.grey);
 }
@@ -39,5 +35,26 @@ TextStyle onboardingPromptStyle() {
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: Colors.grey[700],
+  );  
+}
+// TextStyle buttonTexttStyle() {
+//   return TextStyle(
+//     color: Colors.white, // Text color
+//     fontWeight: FontWeight.bold,
+//     fontSize: 16,
+//   );
+// }
+
+TextStyle buttonTextStyle() {
+  return const TextStyle(
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w600,
+    letterSpacing: .5,
+    fontSize: 16,
+    color: Colors.white
   );
 }
+
+          
+        
+

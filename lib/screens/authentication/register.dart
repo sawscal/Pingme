@@ -86,6 +86,7 @@ class Register extends StatelessWidget {
               horizontalMargin: 25,
                verticalMargin: 0,
                 color: Theme.of(context).colorScheme.secondary,
+                textColor: Colors.black,
             ),
           const SizedBox(height: 25),
           Text(
